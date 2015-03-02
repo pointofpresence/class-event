@@ -140,9 +140,9 @@ If you provide a target object, that object will add this event to it's list of 
 
 ##### Parameters:
 
-`event` String - *name or comma separated list of events*
-`[target]` Object, optional - *optional context for callback, defaults to the `ClassEvent`*
-`[callback]` Function, optional - *callback (optional - defaults to name of event on context*
+* `event` String - *name or comma separated list of events*
+* `[target]` Object, optional - *optional context for callback, defaults to the `ClassEvent`*
+* `[callback]` Function, optional - *callback (optional - defaults to name of event on context*
 
 ### trigger
 
@@ -151,8 +151,9 @@ If you provide a target object, that object will add this event to it's list of 
 Triggers an event, passing in some optional additional data about the event.
 
 ##### Parameters:
-`event` String - *name of event*
-`[data]` Object, optional - *optional data to pass to the callback*
+
+* `event` String - *name of event*
+* `[data]` Object, optional - *optional data to pass to the callback*
 
 
 # Requirements
