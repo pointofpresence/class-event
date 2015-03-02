@@ -84,6 +84,77 @@ eventum2.debind();
 eventum.trigger("event5"); // nothing will happen
 ```
 
+## Methods
+
+### extend
+
+`extend (className, properties, [classMethods])`
+
+*Inherited from [Class](https://github.com/pointofpresence/js-inherit)*
+
+Create a new Class that inherits from this class
+
+##### Parameters:
+
+* `className` String
+* `properties` Object - *hash of properties (`init()` will be the constructor)*
+* `[classMethods]` Object, optional - *optional class methods to add to the class*
+
+### isA
+
+`isA (className)`
+
+*Inherited from [Class](https://github.com/pointofpresence/js-inherit)*
+
+See if a object is a specific class
+
+##### Parameters:
+* `className` String - *class to check against*
+
+### debind
+
+`debind ()`
+
+`debind` is called to remove any listeners an object had on other objects. 
+The most common case is when an object is destroyed you'll want all the event listeners to be removed for you.
+
+### off
+
+`off ( event  [target]  [callback] )`
+
+Unbinds an event. 
+Can be called with 1, 2, or 3 parameters, each of which unbinds a more specific listener.
+
+##### Parameters:
+
+* `event` String - *name of event*
+* `[target]` Object, optional - *optionally limit to a specific target*
+* `[callback]` Function, optional - *optionally limit to one specific callback*
+
+### on
+
+`on ( event  [target]  [callback] )`
+
+Binds a callback to an event on this object. 
+If you provide a target object, that object will add this event to it's list of binds, allowing it to automatically remove it when it is destroyed.
+
+##### Parameters:
+
+`event` String - *name or comma separated list of events*
+`[target]` Object, optional - *optional context for callback, defaults to the `ClassEvent`*
+`[callback]` Function, optional - *callback (optional - defaults to name of event on context*
+
+### trigger
+
+`trigger ( event  [data] )`
+
+Triggers an event, passing in some optional additional data about the event.
+
+##### Parameters:
+`event` String - *name of event*
+`[data]` Object, optional - *optional data to pass to the callback*
+
+
 # Requirements
 
 * [Underscore JS](http://underscorejs.org/)
