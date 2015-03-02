@@ -163,7 +163,7 @@ Triggers an event, passing in some optional additional data about the event.
 
 # Requirements
 
-* [Underscore JS](http://underscorejs.org/)
+* [Underscore.js](http://underscorejs.org/)
 * [js-inherit](https://github.com/pointofpresence/js-inherit)
 * [rs-mixins](https://github.com/pointofpresence/rs-mixins)
 
