@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>rs-mixins tests</title>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
+
+    <!-- https://github.com/pointofpresence/rs-mixins -->
+    <script src="rs-mixins.js"></script>
+
+    <!-- https://github.com/pointofpresence/js-inherit -->
+    <script src="jsinherit.js"></script>
+
+    <!-- https://github.com/pointofpresence/class-event -->
+    <script src="class.event.js"></script>
+</head>
+<body>
+<script>
+    /* on / off / trigger */
+
+    ClassEvent.extend("Eventum", {
+        init: function () {
+            this.on("event1");
+
+            this.on("event2");
+
+            this.on("event3", function () {
+                console.log("event3 callback")
+            });
+
+            this.on("event4", function (param) {
+                console.log("event4 callback with " + param)
+            });
+        },
+        event1: function () {
+            console.log("event1 callback")
+        },
+        event2: function (param) {
+            console.log("event2 callback with " + param)
+        }
+    });
+
+    var eventum = new Eventum;
+
+    eventum.trigger("event1");          // > event1 callback
+    eventum.trigger("event2", "param"); // > event2 callback with param
+    eventum.trigger("event3");          // > event3 callback
+    eventum.trigger("event4", "param"); // > event4 callback with param
+
+    eventum.off("event4");              // > event4 callback with param
+    eventum.trigger("event4", "param"); // nothing will happen
+
+    /* debind */
+
+    ClassEvent.extend("Eventum2", {
+        event1: function () {
+            console.log(this.className + " event1 callback")
+        }
+    });
+
+    var eventum2 = new Eventum2;
+
+    eventum.on("event5", eventum2, "event1");
+    eventum.trigger("event5"); // > Eventum2 event1 callback
+    eventum2.debind();
+    eventum.trigger("event5"); // nothing will happen
+</script>
+</body>
+</html>
