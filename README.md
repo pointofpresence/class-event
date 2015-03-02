@@ -1,7 +1,7 @@
 # class-event
 Objects of this class can trigger events and other objects can bind to those events.
 
-Original idea and implementation by @cykod
+Original idea and implementation by [Pascal Rettig](https://github.com/cykod)
 
 
 # Using class-event
