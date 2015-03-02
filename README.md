@@ -1,7 +1,12 @@
 # class-event
 Objects of this class can trigger events and other objects can bind to those events.
 
-Original idea and implementation by [Pascal Rettig](https://github.com/cykod)
+##### Sources of inspiration :beer:
+
+* Original idea and implementation of the **Simple JavaScript Inheritance** by [John Resig](http://ejohn.org/)
+* Original idea and implementation of `Q.Evented` Class by [Pascal Rettig](https://github.com/cykod)
+
+I just extracted the class code and made it standalone.
 
 
 # Using class-event
